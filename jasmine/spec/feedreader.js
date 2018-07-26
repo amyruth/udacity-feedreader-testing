@@ -86,7 +86,16 @@ $(function () {
 		 * Remember, loadFeed() is asynchronous so this test will require
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
+		const feed = document.querySelector('.feed');
 
+		beforeEach(function(done) {
+			loadFeed(0, done);			
+		});
+
+		//checks to see if there's at least one link tag with the class entry-link present in feed container
+		it('should have at least one entry in the feed container', function () {
+			expect(feed.querySelectorAll('a.entry-link').length >= 1).toBe(true);
+		});
 	});
 
 	/* TODO: Write a new test suite named "New Feed Selection" */
