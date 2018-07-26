@@ -23,7 +23,7 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+			expect(allFeeds.length).not.toBe(0);
         });
 
 
@@ -31,12 +31,22 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+		it('have a URL in each feed object in the array', function() {
+			for(let feed of allFeeds) {
+				expect(feed.url).not.toBe('');
+			}
+		});
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+		it('have a name in each feed object in the array', function() {
+			for(let feed of allFeeds) {
+				expect(feed.name).not.toBe('');
+			}
+		});
+
     });
 
 
