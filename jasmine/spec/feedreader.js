@@ -45,7 +45,6 @@ $(function () {
 				expect(feed.name).not.toBe('');
 			}
 		});
-
 	});
 
 	/* TODO: Write a new test suite named "The menu" */
@@ -56,28 +55,39 @@ $(function () {
 		 * the CSS to determine how we're performing the
 		 * hiding/showing of the menu element.
 		 */
+		const body = document.querySelector('body');
+		const hamburger = document.querySelector('.menu-icon-link');
 
 		it('is hidden by default', function () {
-			const docBody = document.querySelector('body');
-			expect(docBody.classList.contains('menu-hidden')).toBe(true);
+			expect(body.classList.contains('menu-hidden')).toBe(true);
 		});
 		/* TODO: Write a test that ensures the menu changes
 		 * visibility when the menu icon is clicked. This test
 		 * should have two expectations: does the menu display when
 		 * clicked and does it hide when clicked again.
 		 */
-		// TODO: event listener for click check if menu hidden is gone and if gone does it get aadded again
+		
+		//simulated a mouse click to test menu state
+		it('is made visible when menu icon is clicked', function () {
+			hamburger.click();
+			expect(body.classList.contains('menu-hidden')).toBe(false);
+		});
+		it('when visible menu is hidden by clicking again', function () {
+			hamburger.click();
+			expect(body.classList.contains('menu-hidden')).toBe(true);
+		});
+	});
 
+	/* TODO: Write a new test suite named "Initial Entries" */
+	describe('Initial Entries', function () {
+		/* TODO: Write a test that ensures when the loadFeed
+		 * function is called and completes its work, there is at least
+		 * a single .entry element within the .feed container.
+		 * Remember, loadFeed() is asynchronous so this test will require
+		 * the use of Jasmine's beforeEach and asynchronous done() function.
+		 */
 
 	});
-	/* TODO: Write a new test suite named "Initial Entries" */
-
-	/* TODO: Write a test that ensures when the loadFeed
-	 * function is called and completes its work, there is at least
-	 * a single .entry element within the .feed container.
-	 * Remember, loadFeed() is asynchronous so this test will require
-	 * the use of Jasmine's beforeEach and asynchronous done() function.
-	 */
 
 	/* TODO: Write a new test suite named "New Feed Selection" */
 
