@@ -93,8 +93,8 @@ $(function () {
 		});
 
 		//checks to see if there's at least one link tag with the class entry-link present in feed container
-		it('should have at least one entry in the feed container', function () {
-			expect(feed.querySelectorAll('a.entry-link').length >= 1).toBe(true);
+		it('should have at least one element with the class .entry', function () {
+			expect(feed.querySelectorAll('.entry').length >= 1).toBe(true);
 		});
 	});
 
