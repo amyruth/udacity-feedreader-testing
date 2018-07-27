@@ -70,7 +70,6 @@ $(function () {
 			});
 			loadFeed(2, function(done) {
 				feed2 = document.querySelector('.feed').textContent;
-				console.log(feed2);
 				done();
 			});	
 		});
