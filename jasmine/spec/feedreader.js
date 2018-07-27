@@ -63,12 +63,13 @@ $(function () {
 		let feed2;
 
 		//retrieve 2 feeds, save the information from both and compare them
+		//they should be different since they will be of different lengths.
 		beforeEach(function(done){
 			loadFeed(1, function () {
 				feed1 = document.querySelector('.feed').textContent;
 				done();
 			});
-			loadFeed(2, function(done) {
+			loadFeed(2, function() {
 				feed2 = document.querySelector('.feed').textContent;
 				done();
 			});	
