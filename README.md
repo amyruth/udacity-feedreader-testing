@@ -19,6 +19,8 @@ Clone this repositiory onto your local machine, or download the zip file and ext
 
 Open the index.html file in your web browser.
 
+[Or use the Github Pages hosted version here](https://amyruth.github.io/udacity-feedreader-testing/#)
+
 # How to use
 Click the hamburger menu icon in the top left corner to show a list of feeds. 
 Click on the name of a site feed to load the articles from that site. A title list will appear on the page.
