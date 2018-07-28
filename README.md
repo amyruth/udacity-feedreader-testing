@@ -6,12 +6,19 @@ Project 4 of Udacity's Front end web development nanodegree.
 
 # Dependencies
 [Google Feed API](https://developers.google.com/feed/)
+
 [Roboto from Google Fonts via CDN](https://fonts.google.com/specimen/Roboto)
+
 [Icomoon icon font via CDN](https://icomoon.io/)
+
 [Normalize.css](https://necolas.github.io/normalize.css/)
+
 [Jasmine 2.1.2 testing framework](https://github.com/jasmine/jasmine)
+
 [Jasmine 2.1 documentation](https://jasmine.github.io/2.1/introduction)
+
 [jQuery 2.1.1 via CDN](https://jquery.com/)
+
 [Handlebars 2.0.0 via CDN](https://handlebarsjs.com/)
 
 # How to install
