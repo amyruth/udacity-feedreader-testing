@@ -6,6 +6,9 @@ $(function () {
 
 		it('are defined', function () {
 			expect(allFeeds).toBeDefined();
+		});
+		
+		it('does not have a length of 0', function() {
 			expect(allFeeds.length).not.toBe(0);
 		});
 
@@ -67,10 +70,10 @@ $(function () {
 		beforeEach(function(done){
 			loadFeed(1, function () {
 				feed1 = document.querySelector('.feed').textContent;
-				done();
 			});
 			loadFeed(2, function() {
 				feed2 = document.querySelector('.feed').textContent;
+				console.log(feed2);
 				done();
 			});	
 		});
