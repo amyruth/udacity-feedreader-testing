@@ -73,7 +73,6 @@ $(function () {
 			});
 			loadFeed(2, function() {
 				feed2 = document.querySelector('.feed').textContent;
-				console.log(feed2);
 				done();
 			});	
 		});
