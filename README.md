@@ -22,7 +22,7 @@ Project 4 of Udacity's Front end web development nanodegree.
 [Handlebars 2.0.0 via CDN](https://handlebarsjs.com/)
 
 # How to install
-Clone this repositiory onto your local machine, or download the zip file and extract to the directory of your choice.
+Clone this repositiory to your local machine, or download the zip file and extract to the directory of your choice.
 
 Open the index.html file in your web browser.
 
