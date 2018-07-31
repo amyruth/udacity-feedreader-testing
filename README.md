@@ -13,7 +13,7 @@ Project 4 of Udacity's Front end web development nanodegree.
 
 [Normalize.css](https://necolas.github.io/normalize.css/)
 
-[Jasmine 2.1.2 testing framework](https://github.com/jasmine/jasmine)
+[Jasmine 2.1.2 testing framework (included in this repo)](https://github.com/jasmine/jasmine)
 
 [Jasmine 2.1 documentation](https://jasmine.github.io/2.1/introduction)
 
