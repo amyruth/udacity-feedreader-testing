@@ -12,15 +12,18 @@ $(function () {
 			expect(allFeeds.length).not.toBe(0);
 		});
 
-		it('have a URL in each feed object in the array', function () {
+		//check that properties are defined and not empty strings
+		it('has a URL in each feed object in the array', function () {
 			for (let feed of allFeeds) {
 				expect(feed.url).toBeDefined();
+				expect(feed.url.length).not.toBe(0);
 			}
 		});
 
-		it('have a name in each feed object in the array', function () {
+		it('has a name in each feed object in the array', function () {
 			for (let feed of allFeeds) {
 				expect(feed.name).toBeDefined();
+				expect(feed.name.length).not.toBe(0);
 			}
 		});
 	});
@@ -28,21 +31,21 @@ $(function () {
 	describe('The menu', function () {
 
 		const body = document.querySelector('body');
-		const hamburger = document.querySelector('.menu-icon-link');
+		const hamburgerMenu = document.querySelector('.menu-icon-link');
 
 		it('is hidden by default', function () {
-			expect(body.classList.contains('menu-hidden')).toBe(true);
+			expect($('body').hasClass('menu-hidden')).toBe(true);
 		});
 
 		//simulated a mouse click to test menu state
 		it('is made visible when menu icon is clicked and hidden when clicked again', function () {
 			//menu hidden before click
-			hamburger.click();
-			expect(body.classList.contains('menu-hidden')).toBe(false);
+			hamburgerMenu.click();
+			expect($('body').hasClass('menu-hidden')).toBe(false);
 
 			//menu open before click
-			hamburger.click();
-			expect(body.classList.contains('menu-hidden')).toBe(true);
+			hamburgerMenu.click();
+			expect($('body').hasClass('menu-hidden')).toBe(true);
 		});
 	});
 
@@ -70,13 +73,13 @@ $(function () {
 		let feed2;
 
 		//retrieve 2 feeds, save the information from both and compare them
-		//each feed variable should have different text content.
+		//each feed variable should have different content
 		beforeEach(function (done) {
 			loadFeed(1, function () {
-				feed1 = document.querySelector('.feed').textContent;
+				feed1 = document.querySelector('.feed').innerHTML;
 
 				loadFeed(2, function () {
-					feed2 = document.querySelector('.feed').textContent;
+					feed2 = document.querySelector('.feed').innerHTML;
 					done();
 				});
 			});
