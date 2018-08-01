@@ -14,13 +14,13 @@ $(function () {
 
 		it('have a URL in each feed object in the array', function () {
 			for (let feed of allFeeds) {
-				expect(feed.url).not.toBe('');
+				expect(feed.url).toBeDefined();
 			}
 		});
 
 		it('have a name in each feed object in the array', function () {
 			for (let feed of allFeeds) {
-				expect(feed.name).not.toBe('');
+				expect(feed.name).toBeDefined();
 			}
 		});
 	});
@@ -35,11 +35,12 @@ $(function () {
 		});
 		
 		//simulated a mouse click to test menu state
-		it('is made visible when menu icon is clicked', function () {
+		it('is made visible when menu icon is clicked and hidden when clicked again', function () {
+			//menu hidden before click
 			hamburger.click();
 			expect(body.classList.contains('menu-hidden')).toBe(false);
-		});
-		it('when visible menu is hidden by clicking again', function () {
+			
+			//menu open before click
 			hamburger.click();
 			expect(body.classList.contains('menu-hidden')).toBe(true);
 		});
@@ -48,15 +49,19 @@ $(function () {
 	describe('Initial Entries', function () {
 
 		//grab feed container and and run loadFeed
-		container = document.querySelector('.feed');
-
+		let containerLength;
+		
 		beforeEach(function(done) {
-			loadFeed(0, done);			
+			loadFeed(0, function () {
+				containerLength = document.querySelectorAll('.feed .entry').length;
+				done();
+				console.log(containerLength);
+			});
 		});
 
-		//checks to see if at least one .entry element exists
-		it('should have at least one element with the class .entry', function () {
-			expect(container.querySelectorAll('.entry').length).not.toBeLessThan(1);
+		//checks to see if at least one .entry element exists inside the .feed element
+		it('contains at least one article with the class .entry', function () {
+			expect(containerLength).not.toBeLessThan(1);
 		});
 	});
 
