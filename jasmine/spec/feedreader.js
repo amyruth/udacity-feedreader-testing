@@ -38,6 +38,7 @@ $(function () {
 		});
 
 		//simulated a mouse click to test menu state
+		//previous reviewed advised using jQuery instead of JS .contains, so I changed it(?)
 		it('is made visible when menu icon is clicked and hidden when clicked again', function () {
 			//menu hidden before click
 			hamburgerMenu.click();
