@@ -55,7 +55,6 @@ $(function () {
 			loadFeed(0, function () {
 				containerLength = document.querySelectorAll('.feed .entry').length;
 				done();
-				console.log(containerLength);
 			});
 		});
 
@@ -71,16 +70,17 @@ $(function () {
 		let feed2;
 
 		//retrieve 2 feeds, save the information from both and compare them
-		//they should be different since they will be of different lengths.
+		//each feed variable should have different text content.
 		beforeEach(function(done){
-			loadFeed(1, function () {
-				feed1 = document.querySelector('.feed').textContent;
+				loadFeed(1, function () {
+					feed1 = document.querySelector('.feed').textContent;
+					
+					loadFeed(2, function() {
+						feed2 = document.querySelector('.feed').textContent;
+						done();
+					});	
+				});
 			});
-			loadFeed(2, function() {
-				feed2 = document.querySelector('.feed').textContent;
-				done();
-			});	
-		});
 
 		it('ensures a new feed is loaded to the page', function () {
 			expect(feed1 === feed2).toBeFalsy();
