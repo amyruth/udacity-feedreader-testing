@@ -7,8 +7,8 @@ $(function () {
 		it('are defined', function () {
 			expect(allFeeds).toBeDefined();
 		});
-		
-		it('does not have a length of 0', function() {
+
+		it('does not have a length of 0', function () {
 			expect(allFeeds.length).not.toBe(0);
 		});
 
@@ -33,13 +33,13 @@ $(function () {
 		it('is hidden by default', function () {
 			expect(body.classList.contains('menu-hidden')).toBe(true);
 		});
-		
+
 		//simulated a mouse click to test menu state
 		it('is made visible when menu icon is clicked and hidden when clicked again', function () {
 			//menu hidden before click
 			hamburger.click();
 			expect(body.classList.contains('menu-hidden')).toBe(false);
-			
+
 			//menu open before click
 			hamburger.click();
 			expect(body.classList.contains('menu-hidden')).toBe(true);
@@ -50,8 +50,8 @@ $(function () {
 
 		//grab feed container and and run loadFeed
 		let containerLength;
-		
-		beforeEach(function(done) {
+
+		beforeEach(function (done) {
 			loadFeed(0, function () {
 				containerLength = document.querySelectorAll('.feed .entry').length;
 				done();
@@ -65,22 +65,22 @@ $(function () {
 	});
 
 	describe('New Feed Selection', function () {
-	
+
 		let feed1;
 		let feed2;
 
 		//retrieve 2 feeds, save the information from both and compare them
 		//each feed variable should have different text content.
-		beforeEach(function(done){
-				loadFeed(1, function () {
-					feed1 = document.querySelector('.feed').textContent;
-					
-					loadFeed(2, function() {
-						feed2 = document.querySelector('.feed').textContent;
-						done();
-					});	
+		beforeEach(function (done) {
+			loadFeed(1, function () {
+				feed1 = document.querySelector('.feed').textContent;
+
+				loadFeed(2, function () {
+					feed2 = document.querySelector('.feed').textContent;
+					done();
 				});
 			});
+		});
 
 		it('ensures a new feed is loaded to the page', function () {
 			expect(feed1 === feed2).toBeFalsy();
